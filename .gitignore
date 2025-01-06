@@ -25,7 +25,7 @@
 # CMakeLists 和 CMakeCaches
 CMakeLists/
 CMakeCache/
-CMakeFiles
+CMakeFiles/
 
 # Xcode 项目配置文件
 .vscode/
@@ -34,7 +34,7 @@ CMakeFiles
 *.code-workspace
 
 # 忽略所有以 .build 开头的文件夹
-.build/
+build/
 
 # 忽略第三方库的头文件
 third-party/*
@@ -61,7 +61,7 @@ third-party/*
 .out/
 
 # 忽略所有以 .bin 开头的文件夹
-.bin/
+bin/
 
 # 忽略所有以 .dSYM 开头的文件夹（macOS 调试符号文件）
 .dSYM/

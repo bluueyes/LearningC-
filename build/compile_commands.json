@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/code/build",
-  "command": "/usr/bin/g++  -I/code/include -g -g -std=gnu++17 -o CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -c /code/MyString/MyString.cpp",
-  "file": "/code/MyString/MyString.cpp"
-}
-]

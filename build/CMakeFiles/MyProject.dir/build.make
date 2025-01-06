@@ -73,15 +73,15 @@ CMakeFiles/MyProject.dir/MyString/MyString.cpp.o: CMakeFiles/MyProject.dir/flags
 CMakeFiles/MyProject.dir/MyString/MyString.cpp.o: ../MyString/MyString.cpp
 CMakeFiles/MyProject.dir/MyString/MyString.cpp.o: CMakeFiles/MyProject.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyProject.dir/MyString/MyString.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -MF CMakeFiles/MyProject.dir/MyString/MyString.cpp.o.d -o CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -c /code/MyString/MyString.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -MF CMakeFiles/MyProject.dir/MyString/MyString.cpp.o.d -o CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -c /code/MyString/MyString.cpp
 
 CMakeFiles/MyProject.dir/MyString/MyString.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MyProject.dir/MyString/MyString.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /code/MyString/MyString.cpp > CMakeFiles/MyProject.dir/MyString/MyString.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /code/MyString/MyString.cpp > CMakeFiles/MyProject.dir/MyString/MyString.cpp.i
 
 CMakeFiles/MyProject.dir/MyString/MyString.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MyProject.dir/MyString/MyString.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /code/MyString/MyString.cpp -o CMakeFiles/MyProject.dir/MyString/MyString.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /code/MyString/MyString.cpp -o CMakeFiles/MyProject.dir/MyString/MyString.cpp.s
 
 # Object files for target MyProject
 MyProject_OBJECTS = \

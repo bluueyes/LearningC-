@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -o ../bin/MyProject 
+/usr/bin/c++ CMakeFiles/MyProject.dir/MyString/MyString.cpp.o -o ../bin/MyProject 
