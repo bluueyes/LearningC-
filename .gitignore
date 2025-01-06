@@ -1,0 +1,70 @@
+# 编译生成的可执行文件
+*.exe
+*.o
+*.obj
+
+# 编译生成的调试符号文件
+*.pdb
+
+# 编译生成的临时文件
+*.ilk
+*.iobj
+*.tlog
+*.log
+
+# Visual Studio 项目文件
+.vs/
+*.suo
+*.user
+*.sln
+
+# Qt 项目文件
+*.pro.user
+*.qmake
+
+# CMakeLists 和 CMakeCaches
+CMakeLists/
+CMakeCache/
+CMakeFiles
+
+# Xcode 项目配置文件
+.vscode/
+
+# 其他 IDE 项目文件
+*.code-workspace
+
+# 忽略所有以 .build 开头的文件夹
+.build/
+
+# 忽略第三方库的头文件
+third-party/*
+
+# 忽略所有以 .git 开头的文件夹
+.git/
+
+# 忽略所有以 .vscode 开头的文件夹
+.vscode/
+
+# 忽略所有以 .vs 开头的文件夹
+.vs/
+
+# 忽略所有以 .user 开头的文件夹
+.user/
+
+# 忽略所有以 .vs 开头的文件夹
+.vs/
+
+# 忽略所有以 .cache 开头的文件夹
+.cache/
+
+# 忽略所有以 .out 开头的文件夹
+.out/
+
+# 忽略所有以 .bin 开头的文件夹
+.bin/
+
+# 忽略所有以 .dSYM 开头的文件夹（macOS 调试符号文件）
+.dSYM/
+
+# 忽略所有以 .DS_Store 开头的文件（macOS 版本控制系统）
+.DS_Store/
