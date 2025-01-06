@@ -1,0 +1,3 @@
+/code/CMakeFiles/MyProject.dir
+/code/CMakeFiles/edit_cache.dir
+/code/CMakeFiles/rebuild_cache.dir
