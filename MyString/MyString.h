@@ -19,7 +19,7 @@ public:
     inline bool Empty() const{
         return _data==nullptr;
     }
-
+    
 
 private:
     char* _data;

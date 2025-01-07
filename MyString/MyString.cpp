@@ -5,7 +5,7 @@ MyString::MyString(const char* data){
     if(data==nullptr){
         data=nullptr;
         return;
-    }
+    } 
 
     _len=strlen(data);
     _data=new char[_len+1];
@@ -13,7 +13,9 @@ MyString::MyString(const char* data){
     memcpy(_data,data,_len);
     _data[_len]='\0';
 
+   _data[_len]='\0'; 
 }
+
 
 MyString::MyString(const MyString& str){
 
@@ -22,6 +24,7 @@ MyString::MyString(const MyString& str){
         _len=0;
         return;
     }
+
 
     _len=str._len;
 
@@ -70,7 +73,8 @@ MyString::MyString(MyString&& str){
 
     str._data=nullptr;
     str._len=0;
-
+    
+    
 }
 
 MyString& MyString::operator=(MyString&& str){
@@ -145,7 +149,7 @@ int main(){
    MyString str5=std::move(str4);  //移动构造
 
     if(str4.Empty()){
-        std::cout<<" str4 == Empty"<<std::endl;
+        std::cout<<"str4 == Empty"<<std::endl;
     }else{
        std::cout << "str4: " << str4 << std::endl; 
     }
@@ -160,6 +164,5 @@ int main(){
     } else {
         std::cout << "str1 and str2 are not equal." << std::endl;
     }
-
     return 0;
 }
