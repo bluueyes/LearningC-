@@ -13,7 +13,6 @@ public:
     virtual ~MemoryPool();
     virtual void* allocate()=0;
     virtual void deallocate(void* ptr)=0;
-    virtual void Close()=0;
 protected:
     size_t _blockSize;
     size_t _blockCount;
@@ -27,7 +26,7 @@ public:
     ~MemoryPoolThreadSafe() override;
     void* allocate() override;
     void deallocate(void* ptr) override;
-    void Close() override;
+    void Close();
 private:
     std::atomic<bool> _b_flag;
     std::mutex _mutex;
@@ -41,7 +40,6 @@ public:
     ~MemoryPoolOneThread() override;
     void* allocate() override;
     void deallocate(void* ptr) override;
-    void Close() override{}
 private:
 
 };
