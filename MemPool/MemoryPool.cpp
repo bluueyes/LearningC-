@@ -10,16 +10,18 @@ MemoryPool::MemoryPool(size_t blockSize,size_t blockCount):_blockSize(blockSize)
 MemoryPool::~MemoryPool(){
     for(int i=0;i<_blockCount;i++){
         void* data=_pool.front();
+        _pool.pop();
         free(data);
     }
 }
+
+//多线程
 MemoryPoolThreadSafe::MemoryPoolThreadSafe(size_t blockSize,size_t blockCount):MemoryPool(blockSize,blockCount),_b_flag(false){
 
 }
 
 MemoryPoolThreadSafe::~MemoryPoolThreadSafe() {
-    _b_flag=true;
-    _cond.notify_all();
+
 }
 
 void* MemoryPoolThreadSafe::allocate(){
@@ -30,6 +32,7 @@ void* MemoryPoolThreadSafe::allocate(){
 
         return !_pool.empty();
     });
+    if(_b_flag) return nullptr;
 
     auto* data=_pool.front();
     _pool.pop();
@@ -41,7 +44,12 @@ void MemoryPoolThreadSafe::deallocate(void* ptr){
     _pool.push(ptr);
 }
 
+void MemoryPoolThreadSafe::Close(){
+    _b_flag=true;
+    _cond.notify_all();
+}
 
+//单线程
 MemoryPoolOneThread::MemoryPoolOneThread(size_t blockSize,size_t blockCount):MemoryPool(blockSize,blockCount){
 
 }
