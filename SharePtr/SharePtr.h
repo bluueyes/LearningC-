@@ -1,8 +1,9 @@
 #include <iostream>
+#include <atomic>
 
 struct ControlBlock{
 
-    int ref_count;
+    std::atomic<int> ref_count;
     ControlBlock():ref_count(1){
 
     }
@@ -120,7 +121,7 @@ T& SharePtr<T>::operator*(){
 
 template<typename T>
 int SharePtr<T>::getRefCount() const{
-    return _block ? _block->ref_count : 0 ;
+    return _block ? _block->ref_count.load() : 0 ;
 }
 
 template<typename T>
