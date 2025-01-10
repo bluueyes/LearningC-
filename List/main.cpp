@@ -29,11 +29,20 @@ int main() {
 
     std::cout<<"insert 之后内容为: ";
     lst.print();
-    lst.erase(++it);    // 链表: 3, 10
+    it=lst.erase(++it);    // 链表: 3, 10
 
     // 打印链表
     std::cout << "插入和删除后链表内容: ";
     lst.print(); // 输出: 3 10
+
+    lst.insert(++it,3);
+    std::cout<<"insert 3之后内容为: ";
+    lst.print();    // 输出: 3 10 3
+
+    lst.remove(3); // 链表: 10
+
+    std::cout<<"remove 之后内容为: ";
+    lst.print();
 
     // 清空链表
     lst.clear();

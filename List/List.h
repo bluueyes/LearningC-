@@ -54,7 +54,7 @@ public:
     }
 
     bool operator==(const self_type& other){
-        return _node==other.node;
+        return _node==other._node;
     }
 
     bool operator!=(const self_type& other){
