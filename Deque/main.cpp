@@ -42,9 +42,9 @@ int main() {
     std::cout << std::endl;
 
 
-    dq.push_back("Cherry");
-    dq.push_back("Cherry1");
-    dq.push_back("Cherry2");
+    dq.insert(2,"Cherry");
+    dq.insert(2,"Cherry1");
+    dq.insert(2,"Cherry2");
     std::cout<<"插入三个元素后的 Deque: ";
     dq.print();
 

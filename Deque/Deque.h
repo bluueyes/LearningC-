@@ -122,7 +122,7 @@ public:
             buffer[((front_idx+count)%capacity+capacity-i)%capacity]=buffer[((front_idx+count)%capacity-i-1+capacity)%capacity];
 
         }
-        buffer[front_idx+pos]=value;
+        buffer[(front_idx+pos)%capacity]=value;
         back_idx=(back_idx+1)%capacity;
         ++count;
     }
