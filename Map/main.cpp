@@ -38,8 +38,10 @@ int main() {
 
     myMap["apple"]=4;
     myMap["cherry"]=11;
+
     //myMap.insert("apple1",11);
     //myMap.insert("cherry1",11);
+    
     // 再次遍历
     std::cout << "\nAfter operator[] apple and cherry:\n";
     for(auto it=myMap.begin();it!=myMap.end();++it){
