@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # 查找所有源文件
-file(GLOB SOURCES "List/*.cpp")
+file(GLOB SOURCES "Deque/*.cpp")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
