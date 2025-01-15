@@ -20,6 +20,7 @@ struct TreeNode{
 };
 
 template<typename Key,typename Value>
+requires std::totally_ordered<Key>
 class AVLMap{
 
 public:
