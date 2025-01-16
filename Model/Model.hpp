@@ -133,6 +133,61 @@ std::enable_if_t<std::is_void_v<std::void_t<decltype(std::declval<std::remove_re
 f(const T& t){
     t.method();
 }
+
+
+//forward
+
+struct Alloc{
+    uint8_t buf[2048]={0};
+    uint8_t* pos=buf;
+    void* operator()(size_t size){
+        auto tmp=pos;
+        pos+=size;
+        return tmp;
+    }
+};
+
+// template<typename T>
+// T&& Forward(T&& t){
+//     std::cout<<" rightRemove "<<std::endl;
+//     return static_cast<T &&>(t);
+// }
+
+// template<typename T>
+// T&& Forward(T& t){
+//     std::cout<<" leftRemove "<<std::endl;
+//     return static_cast<T &&>(t);
+// }
+
+template <typename T>
+constexpr T&& Forward(typename std::remove_reference_t<T>& t){
+
+    return static_cast<T&&>(t);
+} 
+
+template <typename T>
+constexpr T&& Forward(typename std::remove_reference_t<T>&& t){
+
+    return static_cast<T&&>(t);
+} 
+
+template<typename T,typename... Args>
+T* Create(Args&&... args){
+    Alloc alloc;
+    T* ret=static_cast<T*>(alloc(sizeof(T)));
+    return new(ret) T(Forward<Args>(args)...); //右值引用传递过程会失去右性
+    
+}
+
+struct Point{
+    int _x,_y;
+    Point(int x, int y):_x(x),_y(y){}
+
+    void Show(){
+        std::cout<<" x = "<<_x<<" y = "<<_y<<std::endl;
+    }
+};
+
 void Demo(){
     A a;
     B b;
@@ -149,4 +204,13 @@ void Demo(){
 
     st s(2);
     f(s);
+
+    auto res=Forward<int>(5);    //右值引用
+
+    int d=5;
+    int& data=Forward<int &>(d);
+
+    std::cout<<"==============================="<<std::endl;
+    Point* p = Create<Point,int,int>(3,4);
+    p->Show();
 }
