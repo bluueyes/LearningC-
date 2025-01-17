@@ -79,6 +79,12 @@ public:
         buffer[_size++]=value;
         return;
     }
+    
+    bool empty(){
+        return _size==0;
+    }
+
+    
 
     void pop_back(){
         _size--;        
